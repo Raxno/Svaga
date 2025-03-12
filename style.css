@@ -1,0 +1,700 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: white;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* background: #283036; */
+    background: #1e252b;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}
+p{
+    font-size: 18px;
+    opacity: 55%;
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+}
+a{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: white;
+    opacity: 55%;
+    font-size: 16px;
+    font-weight: 500;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 5px;
+}
+.btn {
+    padding: 12px 28px;
+    background: #FF6E30;
+    border-radius: 8px;
+    opacity: 100%;
+    transition: background-color 0.3s ease;
+}
+.btn:hover{
+    background-color: #E65A21;
+}
+
+/* ШАПКА */
+
+.header {
+    margin-top: 26px;
+}
+.header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.header__logo-img{
+    opacity: 1;
+}
+
+.logo__name {
+    font-size: 22px;
+    font-weight: 600;
+    opacity: 1;
+    transition: transform 0.8s ease;
+    transform: rotate(0deg);
+}
+
+.logo__name.rotating {
+    transform: rotate(360deg);
+}
+
+.logo__name.rotated {
+    transform: rotate(360deg);
+}
+
+.header__logo:hover .logo__name { /* Наведение на весь логотип, вращаем только текст */
+    /* Оставляем пустым! Вращение управляется JS */
+}
+
+.header__nav {
+    display: flex;
+    gap: 80px;
+}
+.header__nav-item {
+    position: relative;
+    transition: opacity 0.5s; 
+}
+.header__nav-item:nth-child(2){
+    padding-right: 25px;
+}
+.header__nav-item:nth-child(2)::after {
+    content: ''; 
+    position: absolute;
+    background: url(./img/psevdo-elemet/header-item.png);
+    width: 18px;
+    height: 18px;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+}
+
+.header__nav-item:hover {
+    opacity: 1; 
+}
+.header__enter {
+    display: flex;
+    align-items: center;
+    gap: 41px;
+
+}
+.enter__in {
+    font-weight: 600;
+    opacity: 78%;
+    transition: opacity 0.5s; 
+}
+.enter__in:hover{
+    opacity: 1;
+}
+
+
+/* Приветственная секция */
+.welcome{
+    margin-bottom: 200px;
+}
+.welcome .container{
+    display: flex;
+    justify-content: space-between;
+}
+.welcome__info {
+    margin-top: 105px;
+}
+.welcome__title {
+    max-width: 600px;
+    margin-bottom: 30px;
+    font-size: 50px;
+}
+.welcome__desc {
+    max-width: 487px;
+    margin-bottom: 60px;
+}
+.welcome__search {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #283036;
+    border-radius: 15px;
+    border: 2px solid #837A93;
+}
+.loop {
+    padding-left: 18px;
+    padding-right: 13px;
+}
+
+.welcome__search-text {
+    padding-right: 110px;
+    font-size: 14px;
+    opacity: 0.33;
+    color: white;
+    background: #283036;
+    border: none;
+    outline: none; /* Убираем стандартный outline при фокусе */
+}
+.welcome__search-text::placeholder { 
+    color: #837A93; 
+}
+.welcome__search-text:focus{
+    border: none;
+}
+.search-info {
+    font-weight: 600;
+    padding: 12px 36px;
+    margin-right: 11px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.welcome__icons {
+    margin-top: 110px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+.welcome__icons a { 
+    display: inline-block; /* Чтобы transform работал */
+    transition: transform 0.8s ease; /* Плавный переход вращения */
+}
+
+.welcome__icons a:hover { 
+    transform: rotate(360deg); /* Поворот на 360 градусов */
+}
+
+
+.welcome__img {
+    width: 590px;
+    height: 490px;
+    margin-top: 58px;
+}
+
+/* Cекция с карточками (ПОпулар) */
+
+.popular {
+    margin-bottom: 200px;
+}
+.popular__text {
+    text-align: center;
+    margin-bottom: 90px;
+
+}
+.popular__title {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 130%;
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+.popular__card-wrapper{
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.popular__card-wrapper > .popular__card:nth-last-child(-n+2) { /* Зависит от количества карточек в строке */
+    margin-bottom: 0;
+}
+
+.popular__card {
+    padding: 33px 0px 27px 33px;
+    width: 332px;
+    margin-bottom: 67px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.popular__card:hover {
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    backdrop-filter: blur(50px);    
+}
+.popular__card:active {
+    transform: scale(0.98);
+    box-shadow: none; 
+}
+
+.popular__card:focus {
+    outline: 2px solid #007bff; /* Добавляем контур при фокусе */
+}
+.popular__card-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 30px;
+}
+.popular__card-logo a{
+    display: inline-block;
+    transition: transform 0.8s ease; /* Плавный переход вращения */
+}
+.popular__card-logo a:hover{
+    transform: rotate(360deg)
+}
+.card__info{
+    display: flex;
+    flex-direction: column;
+}
+.card__title {
+    font-size: 24px;
+    line-height: 36px;
+    opacity: 0.78;
+    margin-top: 3px;
+}
+.card__price {
+    font-size: 18px;
+    line-height: 27px;
+    color: rgba(255, 165, 55, 0.55);
+}
+.card__desc {
+    width: 326px;
+    font-size: 16px;
+    margin-bottom: 36px;
+}
+.card__activity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.card__like {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+}
+
+.like__default,
+.like__active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    border: solid transparent;
+}
+
+.like__active {
+    opacity: 0; /* Изначально скрыта */
+    transform: scale(1);
+}
+
+/* Стиль, когда лайк активен (через data-liked) */
+.card__like[data-liked="true"] .like__active {
+    opacity: 1;
+    transform: scale(1.125);
+}
+
+.card__like[data-liked="true"] .like__default {
+    opacity: 0;
+}
+.card__btn {
+    padding: 9px 35px;
+}
+.btn__wrapper{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+.btn__popular {
+    padding: 17px 38px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #FF6E30;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.btn__popular:hover {
+    background-color: rgba(255, 110, 48, 0.8);
+    color: #fff; 
+    border-color: #FF6E30; 
+}
+
+.btn__popular:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 110, 48, 0.5); /* Добавляем тень */
+}
+
+.btn__popular:active {
+    transform: scale(0.95); /* Немного уменьшаем кнопку */
+    background-color: rgba(255, 110, 48, 1); /* Фон становится еще более насыщенным при клике */
+}
+.welcome__title span{
+    color: #FF6E30;
+}
+
+/* Секция для брендов */
+.brand {
+    margin-bottom: 200px;
+
+}
+.brand .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    backdrop-filter: blur(50px);
+    background: rgba(44, 53, 61, 0.2);
+    transition: box-shadow 0.4s ease;
+   
+}
+.brand .container:hover{
+    box-shadow: 0 4px 12px rgba(255, 110, 48, 0.6);
+}
+.brand__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: rgba(255, 255, 255, 0.8);
+    padding-bottom: 55px;
+    padding-top: 55px;
+}
+.brand__wrapper {
+    display: flex;
+    gap: 107px;
+    padding-bottom: 56px;
+}
+.name__brand {
+
+}
+.brand__image {
+
+}
+
+/* Какой-то блять newcomer, я ебу?? */
+
+.nevcomer {
+    margin-bottom: 200px;
+}
+.nevcomer .container {
+    display: flex;
+    gap: 150px;
+    flex-wrap: nowrap;
+}
+.nevcomer__info {
+    max-width: 427px;
+}
+.nevcomer__title {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 130%;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+}
+.nevcomer__desc {
+    margin-bottom: 60px;
+}
+.nevcomer__btn {
+    padding: 16px 40px;
+}
+.nevcomer__cards-wrapper {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-right: 0;
+    margin-top: 0;
+}
+.nevcomer__card {
+    padding: 28px 22px 28px 22px;
+    width: 245px;
+}
+
+.card__desc-nevercomer {
+    max-width: 245px;
+    font-size: 14px;
+}
+
+/* Cтили для тестера */
+.tester {
+    margin-bottom: 200px;
+}
+.tester .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 57px;
+}
+.tester__first {
+    position: relative;
+
+}
+.tester__info {
+    position: absolute;
+    right: 5px;
+    bottom: 35px;
+    width: 265px;
+    border-radius: 8px;
+    backdrop-filter: blur(50px);
+    background: rgba(40, 48, 54, 0.2);
+    box-shadow: 0 0 10px 2px rgba(41, 128, 185, 0.3);
+}
+.tester__name {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 39px;
+    letter-spacing: 0.015em;
+    color: rgba(255, 253, 253, 0.78);
+    padding: 10px 22px 2px 22px;
+}
+.tester__job {
+    font-size: 16px;
+    line-height: 24px;
+    padding-left: 22px;
+    padding-bottom: 16px;
+}
+.tester__mind {
+    font-size: 14px;
+    line-height: 30px;
+    letter-spacing: 0.015em;
+    opacity: 0.79;
+    max-width: 450px;
+    position: relative;
+}
+.tester__mind::before{
+    content: '';
+    position: absolute;
+    background: url('./img/kovichki.png');
+    top: -50px;
+    left: -50px;
+    width: 103px;
+    height: 320px;
+    background-repeat: no-repeat;
+}
+.btn__unactive{
+    padding-right: 40px;
+}
+.btn__active{
+    margin-left: 40px;
+}
+
+/* стилт контриба */
+.contrib {
+    margin-bottom: 200px;
+}
+.contrib .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.conrib__title {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 130%;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+}
+.contrib__desc {
+    font-weight: 500;
+    padding: 0px 63px 100px 63px;
+    width: 427px;
+    text-align: center;
+}
+
+.contrib__search {
+    display: flex;
+    justify-content: space-between;
+    width: 550px;
+}
+
+.contrib__search-text {
+    padding-left: 25px;
+}
+
+.contrib__btn {
+    padding: 12px 35px;
+   
+}
+
+/* Бля футер */
+
+.footer {
+    border: 0.5px solid rgba(255, 255, 255, 0.15);
+}
+.footer .container {
+    display: flex;
+    padding-top: 70px;
+}
+.product__maker {
+    max-width: 260px;
+    margin-right: 156px;
+}
+.footer__logo {
+    margin-bottom: 25px;
+}
+
+.footer__logo-img{
+    width: 38px;
+    height: 38px;
+}
+
+.footer__title{
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    opacity: 0.9;
+
+}
+.product__maker-desc {
+    font-size: 14px;
+    line-height: 25px;
+}
+.footer__contact {
+    display: flex;
+    flex-direction: column;
+    margin-right: 115px;
+}
+.footer__element{
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+.footer__categories {
+    display: flex;
+    flex-direction: column;
+    margin-right: 115px;
+}
+.footer__company-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Бургер менюха */
+.open{
+    display: flex !important;
+}
+.burger{
+    display: none;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 18px;
+}
+.burger span{
+    height: 2px;
+    width: 80%;
+    background-color: white;
+    opacity: 0.9;
+}
+.burger::before, .burger::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    opacity: 0.9;
+    transition: all 0.3s ease 0s;
+    transform-origin: center;
+}
+.burger::before{
+    top: 0;
+}
+.burger::after{
+    bottom: 0;
+}
+
+/* Добавляем класс active для анимации иконки бургера */
+.burger.active span{
+    transform: scale(0);
+}
+.burger.active::before{
+    top: 50%;
+    transform: rotate(-45deg) translateY(-50%);
+}
+.burger.active::after{
+    bottom: 50%;
+    transform: rotate(45deg) translateY(50%);
+   
+    
+}
+
+@media (max-width: 1100px){
+    .burger{
+        display: flex;
+    
+    }
+    .container{
+        gap: 50px;
+    }
+ 
+    .header__nav{
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0; bottom: 0; left: 0; right: 0;
+        z-index: 50;
+        overflow-y: auto;
+        padding: 50px 40px;
+        background-color:#1e252b;
+    }
+    nav a{
+        flex-direction: column;
+        row-gap: 30px;
+    }
+    .welcome .container{
+        display: flex;
+        justify-content: center;
+    }
+    .welcome__info{
+
+    }
+}
+
+
+
+
+
+
